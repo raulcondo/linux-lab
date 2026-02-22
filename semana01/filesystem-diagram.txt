@@ -1,0 +1,59 @@
+Sistema de Archivos Linux
+=========================
+
+/ (root)
+
+home/
+├── usuario1/
+│   ├── Documentos/
+│   ├── Descargas/
+│   └── Imagenes/
+└── usuario2/
+
+etc/
+├── passwd
+├── group
+├── hosts
+└── ssh/
+    └── sshd_config
+
+var/
+├── log/
+│   ├── syslog
+│   ├── auth.log
+│   └── apache2/
+├── www/
+│   └── html/
+└── cache/
+
+usr/
+├── bin/
+│   ├── python3
+│   ├── git
+│   └── vim
+├── lib/
+└── local/
+    └── bin/
+
+bin/ -> usr/bin/ (symlink)
+
+tmp/
+(archivos temporales)
+
+boot/
+├── vmlinuz (kernel)
+└── grub/
+
+dev/
+├── sda (disco principal)
+├── sda1 (particion 1)
+├── sda2 (particion 2)
+└── null (agujero negro)
+
+proc/ (virtual)
+├── cpuinfo
+├── meminfo
+└── [PIDs]/
+
+sys/ (virtual)
+└── devices/
