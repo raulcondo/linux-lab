@@ -28,4 +28,5 @@ secrets.txt
 # Directorios de prueba
 test-data/
 scratch/
-temp/
+temp/semana03/sample.log
+semana03/analysis-report.txt
