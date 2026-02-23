@@ -33,3 +33,23 @@ echo "configuraciones organizadas"
 echo "Organizando logs..."
 mv *.log organized/logs/ 2>/dev/null || true
 echo "Logs organizados"
+# Aplicar permisos
+echo "[4/4] Aplicando permisos..."
+# Directorios: 755 (rwxr-xr-x)
+chmod 755 organized/
+chmod 755 organized/*/
+# Documentos: 644 (rw-r--r--)
+find organized/documents/ -type f -exec chmod 644 {} \;
+# Imagenes: 644 (rw-r--r--)
+find organized/images/ -type f -exec chmod 644 {} \;
+# Scripts: 755 (rwxr-xr-x) - ejecutables
+find organized/scripts/ -type f -exec chmod 755 {} \;
+# Configuraciones: 644 (rw-r--r--)
+find organized/config/ -type f -exec chmod 644 {} \;
+# Logs: 644 (rw-r--r--)
+find organized/logs/ -type f -exec chmod 644 {} \;
+echo "Permisos aplicados correctamente"
+echo ""
+echo "=== Organizacion completada ==="
+echo "Ver estructura: tree organized/"
+echo "Ver permisos: ls -lR organized/"
