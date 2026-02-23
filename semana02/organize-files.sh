@@ -18,3 +18,18 @@ mv *.jpg organized/images/ 2>/dev/null || true
 mv *.png organized/images/ 2>/dev/null || true
 mv *.gif organized/images/ 2>/dev/null || true
 echo "Imagenes organizadas"
+# Organizar scripts
+echo "Organizando scripts..."
+mv *.sh organized/scripts/ 2>/dev/null || true
+mv *.py organized/scripts/ 2>/dev/null || true
+echo "scripts organizados"
+# Organizar configuraciones
+echo "Organizando configuraciones..."
+mv *.conf organized/config/ 2>/dev/null || true
+mv *.json organized/config/ 2>/dev/null || true
+mv *.xml organized/config/ 2>/dev/null || true
+echo "configuraciones organizadas"
+# Organizar logs
+echo "Organizando logs..."
+mv *.log organized/logs/ 2>/dev/null || true
+echo "Logs organizados"
