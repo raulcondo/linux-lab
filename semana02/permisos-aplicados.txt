@@ -1,0 +1,80 @@
+organized/:
+total 24
+drwxr-xr-x 2 raul raul 4096 Feb 22 21:27 config
+drwxr-xr-x 2 raul raul 4096 Feb 22 21:27 documents
+drwxr-xr-x 2 raul raul 4096 Feb 22 21:27 images
+drwxr-xr-x 2 raul raul 4096 Feb 22 21:27 logs
+drwxr-xr-x 2 raul raul 4096 Feb 22 21:36 scripts
+drwxr-xr-x 2 raul raul 4096 Feb 22 21:27 temp
+
+organized/config:
+total 32
+-rw-r--r-- 1 raul raul 25 Feb 22 20:30 config_1.conf
+-rw-r--r-- 1 raul raul 25 Feb 22 20:30 config_2.conf
+-rw-r--r-- 1 raul raul 25 Feb 22 20:30 config_3.conf
+-rw-r--r-- 1 raul raul 25 Feb 22 20:30 config_4.conf
+-rw-r--r-- 1 raul raul 15 Feb 22 20:30 settings_1.json
+-rw-r--r-- 1 raul raul 15 Feb 22 20:30 settings_2.json
+-rw-r--r-- 1 raul raul 15 Feb 22 20:30 settings_3.json
+-rw-r--r-- 1 raul raul 15 Feb 22 20:30 settings_4.json
+
+organized/documents:
+total 64
+-rw-r--r-- 1 raul raul    0 Feb 22 19:16 README.md
+-rw-r--r-- 1 raul raul    0 Feb 22 19:18 analisis-permisos.md
+-rw-r--r-- 1 raul raul   22 Feb 22 20:30 documento_1.txt
+-rw-r--r-- 1 raul raul   22 Feb 22 20:30 documento_2.txt
+-rw-r--r-- 1 raul raul   22 Feb 22 20:30 documento_3.txt
+-rw-r--r-- 1 raul raul   22 Feb 22 20:30 documento_4.txt
+-rw-r--r-- 1 raul raul   22 Feb 22 20:30 documento_5.txt
+-rw-r--r-- 1 raul raul 3039 Feb 22 20:47 estado-inicial.txt
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 notas_1.md
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 notas_2.md
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 notas_3.md
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 notas_4.md
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 notas_5.md
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 reporte_1.doc
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 reporte_2.doc
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 reporte_3.doc
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 reporte_4.doc
+-rw-r--r-- 1 raul raul   10 Feb 22 20:30 reporte_5.doc
+
+organized/images:
+total 40
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 foto_1.jpg
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 foto_2.jpg
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 foto_3.jpg
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 foto_4.jpg
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 foto_5.jpg
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 screenshot_1.png
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 screenshot_2.png
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 screenshot_3.png
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 screenshot_4.png
+-rw-r--r-- 1 raul raul 14 Feb 22 20:30 screenshot_5.png
+
+organized/logs:
+total 28
+-rw-r--r-- 1 raul raul 89 Feb 22 20:30 app_1.log
+-rw-r--r-- 1 raul raul 89 Feb 22 20:30 app_2.log
+-rw-r--r-- 1 raul raul 89 Feb 22 20:30 app_3.log
+-rw-r--r-- 1 raul raul 54 Feb 22 20:30 sistema_1.log
+-rw-r--r-- 1 raul raul 54 Feb 22 20:30 sistema_2.log
+-rw-r--r-- 1 raul raul 54 Feb 22 20:30 sistema_3.log
+-rw-r--r-- 1 raul raul 54 Feb 22 20:30 sistema_4.log
+
+organized/scripts:
+total 44
+-rwxr-xr-x 1 raul raul 1288 Feb 22 20:27 generate-messy-files.sh
+-rwxr-xr-x 1 raul raul   35 Feb 22 20:30 script_1.sh
+-rwxr-xr-x 1 raul raul   35 Feb 22 20:30 script_2.sh
+-rwxr-xr-x 1 raul raul   35 Feb 22 20:30 script_3.sh
+-rwxr-xr-x 1 raul raul   35 Feb 22 20:30 script_4.sh
+-rwxr-xr-x 1 raul raul   35 Feb 22 20:30 script_5.sh
+-rwxr-xr-x 1 raul raul   48 Feb 22 20:30 utilidad_1.py
+-rwxr-xr-x 1 raul raul   48 Feb 22 20:30 utilidad_2.py
+-rwxr-xr-x 1 raul raul   48 Feb 22 20:30 utilidad_3.py
+-rwxr-xr-x 1 raul raul   48 Feb 22 20:30 utilidad_4.py
+-rwxr-xr-x 1 raul raul   48 Feb 22 20:30 utilidad_5.py
+
+organized/temp:
+total 0
