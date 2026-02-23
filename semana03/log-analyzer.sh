@@ -62,3 +62,20 @@ cut -d'|' -f1 "$LOGFILE" | \
     uniq -c | \
     awk '{ printf " %s:00 %s eventos \n", $2, $1}'
 echo ""
+# [4/5] Top 5 mensajes de error m s frecuentes
+echo " [4/5] TOP 5 MENSAJES DE ERROR "
+echo " ------------------------------"
+grep -E "\| ( ERROR | FATAL ) \|" "$LOGFILE" | \
+    cut -d'|' -f4 | \
+    tr -d ' ' | \
+    sort | \
+    uniq -c | \
+    sort -rn | \
+    head -5 | \
+    awk '{
+        count = $1
+        $1 = ""
+        gsub (/^ /, "", $0)
+        printf " %4d veces -> %s\n", count, $0
+    }'
+echo ""
