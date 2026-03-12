@@ -111,6 +111,23 @@ printf "%-18s %s\n" "Swap usado:" "$swap_usado"
 echo ""
 
 }
+# === Seccion 4: Disco ===
+seccion_disco () {
+
+echo "[ USO DE DISCO ]"
+echo "$SEPARADOR_SEC"
+
+printf "\n%-20s %6s %6s %6s %5s\n" \
+"Particion" "Total" "Usado" "Libre" "Uso%"
+
+echo "\n$(printf '%.0s-' {1..48})"
+
+df -h | grep -v "^tmpfs \|^udev \|^Filesystem" | \
+awk '{printf "\n%-20s %6s %6s %6s %5s\n", $6, $2, $3, $4, $5}'
+
+echo ""
+
+}
 # === Ejecutar segun el modo ===
 case "$MODO" in
 
@@ -133,20 +150,3 @@ disk)
 seccion_disco
 ;;
 esac
-# === Seccion 4: Disco ===
-seccion_disco () {
-
-echo "[ USO DE DISCO ]"
-echo "$SEPARADOR_SEC"
-
-printf "\n%-20s %6s %6s %6s %5s\n" \
-"Particion" "Total" "Usado" "Libre" "Uso%"
-
-echo "\n$(printf '%.0s-' {1..48})"
-
-df -h | grep -v "^tmpfs \|^udev \|^Filesystem" | \
-awk '{printf "\n%-20s %6s %6s %6s %5s\n", $6, $2, $3, $4, $5}'
-
-echo ""
-
-}
