@@ -108,6 +108,27 @@ log "OK" "Último backup: $(basename "$ultimo")"
 return 0
 }
 
+# === Verificación 3: antigüedad del último backup ===
+verificar_antiguedad () {
+
+    log "INFO" "Verificando antigüedad del backup más reciente ..."
+
+    local dias_limite=$(( MAX_HORAS_SIN_BACKUP / 24 ))
+    [ "$dias_limite" -eq 0 ] && dias_limite=1
+
+    local recientes
+
+    recientes=$(find "$DIR_BACKUP" -maxdepth 1 -type f -name "*.tar.gz" -mtime -"$dias_limite" | wc -l)
+
+    if [ "$recientes" -eq 0 ]; then
+        log "WARNING" "No se encontraron backups recientes (últimas ${MAX_HORAS_SIN_BACKUP} horas)."
+        estado_global="WARNING"
+        return 0
+    fi
+
+    log "OK" "$recientes backup(s) recientes (últimas ${MAX_HORAS_SIN_BACKUP} horas)."
+    return 0
+}
 # === Procesar argumentos especiales ===
 case "${1:-}" in
     --version) echo "backup-check.sh v$VERSION"; exit 0 ;;
@@ -124,3 +145,6 @@ if ! verificar_directorio; then
 log "ERROR" "Verificación abortada: directorio inaccesible."
 exit 1
 fi
+
+verificar_archivos
+verificar_antiguedad
