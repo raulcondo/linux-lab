@@ -55,12 +55,6 @@ log() {
     fi
 }
 
-# === Procesar argumentos especiales ===
-case "${1:-}" in
-    --version) echo "backup-check.sh v$VERSION"; exit 0 ;;
-    --help|-h) uso ;;
-esac
-mkdir -p "$DIR_LOGS"
 # === Verificación 1: existencia del directorio ===
 verificar_directorio() {
 
@@ -84,7 +78,42 @@ fi
 log "OK" "Directorio accesible: $DIR_BACKUP"
 return 0
 }
+# === Verificación 2: existencia de archivos de backup ===
+verificar_archivos () {
 
+log "INFO" "Buscando archivos de backup (*.tar.gz)..."
+
+local total
+total=$(find "$DIR_BACKUP" -maxdepth 1 -type f \
+-name "*.tar.gz" | wc -l)
+
+if [ "$total" -eq 0 ]; then
+    log "ERROR" "No se encontraron archivos .tar.gz en $DIR_BACKUP"
+    return 1
+fi
+
+log "OK" "Se encontraron $total archivo(s) de backup."
+
+# Verificar que el más reciente no está vacío
+local ultimo
+ultimo=$(find "$DIR_BACKUP" -maxdepth 1 -type f \
+-name "*.tar.gz" | sort | tail -1)
+
+if [ ! -s "$ultimo" ]; then
+    log "WARNING" "El archivo más reciente está vacío: $ultimo"
+    return 0
+fi
+
+log "OK" "Último backup: $(basename "$ultimo")"
+return 0
+}
+
+# === Procesar argumentos especiales ===
+case "${1:-}" in
+    --version) echo "backup-check.sh v$VERSION"; exit 0 ;;
+    --help|-h) uso ;;
+esac
+mkdir -p "$DIR_LOGS"
 # === Inicio del reporte ===
 log "INFO" "=== backup-check.sh v$VERSION - Inicio ==="
 log "INFO" "Directorio objetivo: $DIR_BACKUP"
