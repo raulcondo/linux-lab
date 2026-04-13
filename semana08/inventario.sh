@@ -1,7 +1,8 @@
+
 #!/bin/bash
 set -euo pipefail
 
-REPO="${1:-$HOME/linux -lab}"
+REPO="${1:-$HOME/linux-lab}"
 
 if [[ ! -d "$REPO" ]]; then
 echo "Error: directorio '$REPO ' no existe." >&2
@@ -11,7 +12,7 @@ fi
 echo "Analizando repositorio: $REPO"
 # --- 1. Cargar lista de archivos ---
 mapfile -t archivos < <(find "$REPO" -type f | sort)
-echo "Total de archivos encontrados: ${# archivos[@]}"
+echo "Total de archivos encontrados: ${#archivos[@]}"
 # --- 2. Conteo por extension ---
 declare -A conteo
 declare -A tamano_ext
@@ -19,7 +20,7 @@ declare -A tamano_ext
 for f in "${archivos[@]}"; do
 nombre="${f##*/}"
 if [[ "$nombre" == *.* ]]; then
-ext="${nombre ##*.}"
+ext="${nombre##*.}"
 else
 ext="(sin extension)"
 fi
@@ -60,7 +61,7 @@ echo "=== ARCHIVOS POR EXTENSION ==="
 echo "EXTENSION ARCHIVOS TAMANO_KB"
 for ext in $(printf '%s\n' "${!conteo[@]}" | sort); do
 kb=$(( ${tamano_ext["$ext"]:-0} / 1024 ))
-echo "$ext ${conteo[$ext]} $kb"
+echo "$ext ${conteo[$ext]:-0} $kb"
 done
 } | column -t
 
@@ -100,7 +101,7 @@ echo "|-----------|----------|-----------|"
 
 for ext in $(printf '%s\n' "${!conteo[@]}" | sort); do
 kb=$(( ${tamano_ext["$ext"]:-0} / 1024 ))
-echo "| $ext | ${conteo[$ext]} | $kb |"
+echo "| $ext | ${conteo[$ext]:-0} | $kb |"
 done
 
 echo ""
