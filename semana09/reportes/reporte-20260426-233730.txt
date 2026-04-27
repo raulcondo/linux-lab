@@ -1,0 +1,60 @@
+========================================
+REPORTE DE PROCESOS - 2026-04-26 23:37:30
+Sistema: RAUL | Usuario: root
+========================================
+
+--- Top 5 procesos por CPU ---
+ raul     PID:1407   CPU: 33.3% MEM:  0.0% /bin/bash
+ root     PID:1      CPU:  0.2% MEM:  0.3% /sbin/init
+ root     PID:42     CPU:  0.1% MEM:  0.3% /usr/lib/systemd/systemd-journald
+ systemd+ PID:141    CPU:  0.1% MEM:  0.1% /usr/lib/systemd/systemd-timesyncd
+ raul     PID:433    CPU:  0.0% MEM:  0.2% /usr/lib/systemd/systemd
+
+--- Top 5 procesos por MEM ---
+ root     PID:286    CPU:  0.0% MEM:  0.5% /usr/bin/python3
+ root     PID:42     CPU:  0.1% MEM:  0.3% /usr/lib/systemd/systemd-journald
+ root     PID:1149   CPU:  0.0% MEM:  0.3% /usr/libexec/wsl-pro-service
+ systemd+ PID:137    CPU:  0.0% MEM:  0.3% /usr/lib/systemd/systemd-resolved
+ root     PID:1      CPU:  0.2% MEM:  0.3% /sbin/init
+
+--- Procesos zombie ---
+ Ninguno detectado
+
+--- Árbol de procesos de 'root' ---
+systemd(1)-+-agetty(254)
+           |-agetty(267)
+           |-cron(157)
+           |-dbus-daemon(158)
+           |-init-systemd(Ub(2)-+-SessionLeader(382)---Relay(384)(383)---bash(384)-+-git(798)---less(799)
+           |                    |                                                  `-monitor-proceso(1407)-+-monitor-proceso(1411)-+
+           |                    |                                                                          `-tee(1413)
+           |                    |-init(6)---{init}(7)
+           |                    |-login(385)---bash(457)
+           |                    `-{init-systemd(Ub}(8)
+           |-polkitd(1183)-+-{polkitd}(1185)
+           |               |-{polkitd}(1186)
+           |               `-{polkitd}(1187)
+           |-rsyslogd(263)-+-{rsyslogd}(320)
+           |               |-{rsyslogd}(321)
+           |               `-{rsyslogd}(322)
+           |-systemd(433)---(sd-pam)(434)
+           |-systemd-journal(42)
+           |-systemd-logind(214)
+           |-systemd-resolve(137)
+           |-systemd-timesyn(141)---{systemd-timesyn}(152)
+           |-systemd-udevd(88)
+           |-unattended-upgr(286)---{unattended-upgr}(336)
+           `-wsl-pro-service(1149)-+-{wsl-pro-service}(1150)
+                                   |-{wsl-pro-service}(1151)
+                                   |-{wsl-pro-service}(1152)
+                                   |-{wsl-pro-service}(1153)
+                                   |-{wsl-pro-service}(1154)
+                                   |-{wsl-pro-service}(1155)
+                                   `-{wsl-pro-service}(1157)
+
+--- Procesos con CPU > 10% ---
+ PID:1411   CPU: 33.3% CMD:/bin/bash
+ PID:1407   CPU: 20.0% CMD:/bin/bash
+
+========================================
+Reporte guardado en: reportes/reporte-20260426-233730.txt

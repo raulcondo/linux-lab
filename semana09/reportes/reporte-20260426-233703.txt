@@ -1,0 +1,25 @@
+========================================
+REPORTE DE PROCESOS - 2026-04-26 23:37:03
+Sistema: RAUL | Usuario: raul
+========================================
+
+--- Top 5 procesos por CPU ---
+ raul     PID:1391   CPU:  300% MEM:  0.0% ps
+ root     PID:1      CPU:  0.2% MEM:  0.3% /sbin/init
+ root     PID:42     CPU:  0.1% MEM:  0.3% /usr/lib/systemd/systemd-journald
+ systemd+ PID:141    CPU:  0.1% MEM:  0.1% /usr/lib/systemd/systemd-timesyncd
+ raul     PID:433    CPU:  0.0% MEM:  0.2% /usr/lib/systemd/systemd
+
+--- Top 5 procesos por MEM ---
+ root     PID:286    CPU:  0.0% MEM:  0.5% /usr/bin/python3
+ root     PID:42     CPU:  0.1% MEM:  0.3% /usr/lib/systemd/systemd-journald
+ root     PID:1149   CPU:  0.0% MEM:  0.3% /usr/libexec/wsl-pro-service
+ systemd+ PID:137    CPU:  0.0% MEM:  0.3% /usr/lib/systemd/systemd-resolved
+ root     PID:1      CPU:  0.2% MEM:  0.3% /sbin/init
+
+--- Procesos zombie ---
+ Ninguno detectado
+
+--- Verificando procesos vigilados ---
+[0;32m[2026-04-26 23:37:03] [OK] Proceso 'bash' activo (PID: 384)[0m
+[0;33m[2026-04-26 23:37:03] [WARNING] Proceso 'sshd' no encontrado[0m

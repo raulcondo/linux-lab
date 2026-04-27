@@ -1,0 +1,36 @@
+========================================
+REPORTE DE PROCESOS - 2026-04-26 23:36:25
+Sistema: RAUL | Usuario: raul
+========================================
+
+--- Top 5 procesos por CPU ---
+ raul     PID:1369   CPU:  225% MEM:  0.1% ps
+ raul     PID:1370   CPU: 50.0% MEM:  0.0% awk
+ raul     PID:1361   CPU: 20.0% MEM:  0.0% /bin/bash
+ raul     PID:1367   CPU: 20.0% MEM:  0.0% tee
+ root     PID:1      CPU:  0.2% MEM:  0.3% /sbin/init
+
+--- Top 5 procesos por MEM ---
+ root     PID:286    CPU:  0.0% MEM:  0.5% /usr/bin/python3
+ root     PID:42     CPU:  0.1% MEM:  0.3% /usr/lib/systemd/systemd-journald
+ root     PID:1149   CPU:  0.0% MEM:  0.3% /usr/libexec/wsl-pro-service
+ systemd+ PID:137    CPU:  0.0% MEM:  0.3% /usr/lib/systemd/systemd-resolved
+ root     PID:1      CPU:  0.2% MEM:  0.3% /sbin/init
+
+--- Procesos zombie ---
+ Ninguno detectado
+
+--- Árbol de procesos de 'raul' ---
+bash(384)-+-git(798)---less(799)
+          `-monitor-proceso(1361)-+-monitor-proceso(1365)---pstree(1376)
+                                  `-tee(1367)
+
+bash(457)
+
+systemd(433)---(sd-pam)(434)
+
+--- Procesos con CPU > 50% ---
+ Ninguno sobre el umbral
+
+========================================
+Reporte guardado en: reportes/reporte-20260426-233625.txt
