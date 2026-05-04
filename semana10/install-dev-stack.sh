@@ -6,7 +6,7 @@
 set -euo pipefail
 
 # === CONSTANTES ===
-readonly VERSION="1.0.0"
+readonly APP_VERSION="1.0.0"
 readonly LOG_FILE="install.log"
 readonly TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
@@ -58,7 +58,7 @@ STEP) echo -e "\n${BLUE}===== $mensaje =====${NC}" ;;
 esac
 }
 
-echo "Dev Stack Installer v$VERSION" > "$LOG_FILE"
+echo " DEV STACK INSTALLER v$APP_VERSION" > "$LOG_FILE"
 echo "Iniciado: $TIMESTAMP" >> "$LOG_FILE"
 echo "--------------------------------" >> "$LOG_FILE"
 # === DETECCION DE OS ===
@@ -206,7 +206,7 @@ fi
 main() {
 echo ""
 echo "============================="
-echo " DEV STACK INSTALLER v$VERSION"
+echo " DEV STACK INSTALLER v$APP_VERSION"
 echo "============================="
 echo ""
 
